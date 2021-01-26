@@ -18,6 +18,7 @@
 			function check_fields()
 			{
 				var a = document.getElementById("username");
+				//git message
 				var b = document.getElementById("password");
 				var c = document.getElementById("firstname");
 				var d = document.getElementById("lastname");
