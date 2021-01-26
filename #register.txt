@@ -1,0 +1,86 @@
+<!-- ΕΓΓΡΑΦΗ ΝΕΟΥ ΧΡΗΣΤΗ -->
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1253"> 
+		<title>Εγγραφή Χρήστη</title>
+		<link rel="stylesheet" type="text/css" href="auction_style.css">
+		<script type="text/javascript">
+			function check_number(nchar)
+			{
+			 var charCode = (nchar.which) ? nchar.which : event.keyCode
+			 if (charCode < 48 || charCode > 57)
+				return false;
+			 return true;
+			}
+			function clear()
+			{
+				document.getElementById("username").value='';
+				document.getElementById("password").value='';
+				document.getElementById("firstname").value='';
+				document.getElementById("lastname").value='';
+				document.getElementById("address").value='';
+				document.getElementById("email").value='';
+				document.getElementById("telephone").value='';
+			}
+		</script>
+	</head>
+	<body>
+		<?php include "header.php"; ?> 
+		<div class="section_2">
+			<div class="section_2L">
+				<div class="wrapper">
+					<p> Για εγγραφή νέου χρήστη καταχωρήστε τα στοιχεία σας στη φόρμα εγγραφής. 
+						Ο λογαριασμός σας θα ενεργοποιηθεί αφού ολοκληρωθεί ο έλεγχος των στοιχείων σας 
+						από τον διαχειριστή του συστήματος. Μετά την ενεργοποίηση του λογαριασμού σας θα
+						μπορείτε να συμμετέχετε σε δημοπρασίες, χωρίς δυνατότητα αποποίησης των δεσμεύσεων που απορρέουν
+						από τη συμμετοχή σας σε αυτές.</p>
+					<p><a href="index.php">Επιστροφή στην αρχική σελίδα </a></p>
+				</div>
+			</div>
+			<div class="section_2R">
+				<div class="wrapper-extended">
+					<h3>Εγγραφή νέου χρήστη</h3>
+					<p>(τα πεδία με * είναι υποχρεωτικά)</p>
+					<form id="form_register" action="javascript:clear()" method="post"> 
+						<div class="item_row">
+							<div class="item_col"> <label>Όνομα χρήστη *</label> </div>
+							<div class="item_col"> <input id="username" type="text" name="username" maxlength = "25" class="form-input"> </div>
+						</div>
+						<div class="item_row">
+							<div class="item_col"> <label>Κωδικός χρήστη *</label> </div>
+							<div class="item_col"> <input id="password" type="password" name="password" maxlength = "8" class="form-input"> </div>
+						</div>
+						<div class="item_row">
+							<div class="item_col"> <label>Όνομα *</label> </div>
+							<div class="item_col"> <input id="firstname" type="text" name="firstname" maxlength = "25" class="form-input"> </div>
+						</div>
+						<div class="item_row">
+							<div class="item_col"> <label>Επώνυμο *</label> </div>
+							<div class="item_col"> <input id="lastname" type="text" name="lastname" maxlength = "25" class="form-input"> </div>
+						</div>
+						<div class="item_row">
+							<div class="item_col"> <label>Διεύθυνση (Οδός, Αριθμός, Περιοχή, Τ.Κ.)</label> </div>
+							<div class="item_col"> <textarea cols="40" rows="5" id="address" type="text" name="address" maxlength = "255" class="form-input"> </textarea> </div>
+						</div>
+						<div class="item_row">
+							<div class="item_col"> <label>email *</label> </div>
+							<div class="item_col"> <input id="email" type="text" name="email" maxlength = "45" class="form-input"> </div>
+						</div>
+						<div class="item_row">
+							<div class="item_col"> <label>Τηλέφωνο</label> </div>
+							<div class="item_col"> <input id="telephone" type="text" name="telephone" maxlength = "10" class="form-input" onkeypress="return check_number(event)"> </div>
+						</div>
+						<div class="item_row">
+							<div class="item_col"> </div>
+							<div class="item_col"> </div>
+							<div class="item_col"> <input type="submit" class="button" value="Εγγραφή" name="button_register" formAction="register_confirm.php" > </div>
+							<div class="item_col" align="right"> <button type="submit" class="button"> Καθαρισμός </button> </div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<?php include "footer.php"; ?>
+   </body>
+</html>
